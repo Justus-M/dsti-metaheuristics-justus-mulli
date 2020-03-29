@@ -8,18 +8,26 @@ from tsp import tsp
 import pandas as pd
 
 
-shift = pd.read_csv('shift_data.csv')
-bias = pd.read_csv('bias.csv')
 
-djibouti_solution = tsp.solve_tsp('http://www.math.uwaterloo.ca/tsp/world/dj38.tsp')
-qatar_solution = tsp.solve_tsp('http://www.math.uwaterloo.ca/tsp/world/qa194.tsp')
-
-res = griewank.minimize_griewank(50, shift, bias)
-res = sphere.minimize_sphere(50, shift, bias)
-res = griewank.minimize_griewank(50, shift, bias)
-rastrigin.minimize_rastrigin(50, shift, bias)git
-ackley.minimize_ackley(50, shift, bias)
-rosenbrock.minimize_rosenbrock(50, shift, bias)
-schwefel.minimize_schwefel(50, shift, bias)
+def run(function, param = None):
+    shift = pd.read_csv('shift_data.csv')
+    bias = pd.read_csv('bias.csv')
+    if function == 'djibouti':
+        res = tsp.solve_tsp('http://www.math.uwaterloo.ca/tsp/world/dj38.tsp')
+    elif function == 'qatar':
+        res = tsp.solve_tsp('http://www.math.uwaterloo.ca/tsp/world/qa194.tsp')
+    elif function == 'griewank':
+        res = griewank.minimize_griewank(param, shift, bias)
+    elif function =='sphere':
+        res = sphere.minimize_sphere(param, shift, bias)
+    elif function == 'rastrigin':
+        res = rastrigin.minimize_rastrigin(param, shift, bias)
+    elif function == 'ackley':
+        res = ackley.minimize_ackley(param, shift, bias)
+    elif function == 'rosenbrock':
+        res = rosenbrock.minimize_rosenbrock(param, shift, bias)
+    elif function == 'schwefel':
+        res = schwefel.minimize_schwefel(param, shift, bias)
+    return res
 
 
