@@ -3,7 +3,7 @@ TSP
 
 --I opted for the 2-opt optimization algorithm as it is a specialized algorithm specifically designed for the traveling salesman problem, essentially taking a route that crosses over itself, and then reorganizing it so that it no longer crosses over itself. It has proven to be one of the most efficient algorithms for this problem as it is specifically designed for it.
 
---** The parameters of the algorithm**
+** The parameters of the algorithm**
 
 --The URL of the tsp input file and the number of iterations are the inputs for my function, although I have also created a euclidean distance lambda function to be used for the evaluation of distances.
 
