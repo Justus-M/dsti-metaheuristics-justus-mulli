@@ -1,5 +1,5 @@
 TSP
---** The chosen algorithm and a justification of this choice**
+** The chosen algorithm and a justification of this choice**
 
 --I opted for the 2-opt optimization algorithm as it is a specialized algorithm specifically designed for the traveling salesman problem, essentially taking a route that crosses over itself, and then reorganizing it so that it no longer crosses over itself. It has proven to be one of the most efficient algorithms for this problem as it is specifically designed for it.
 
